@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+#mainContent {
+    position: relative;
+    z-index: 1;
+}
+
+.observer-layer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevents interaction */
+    overflow-y: scroll; /* Allows scrolling */
+    z-index: 9998; /* Ensure it is on top */
+    background: rgba(0, 0, 0, 0); /* Transparent background */
+    border:3px red solid;
+}
+
+.float-button {
+  position: fixed;
+  right:0;
+  top:0;
+  z-index: 9999; /* Ensure it is on top */
+}
+
+
+</style>
+</head>
+<body>
+  <div id="mainContent">
+    <!-- Your main content goes here -->
+    <p>Scroll down to see the observer layer in action...</p>
+  </div>
+
+  <button 
+  class="float-button"
+  onclick="checkTrackingLog();"
+  >
+    tracking 기록 확인
+  </button>
+
+   <div class="observer-layer" id="observerLayer">
+        <!-- This is an observer layer, it should not affect user interaction -->
+   </div>
+
+  <script
+  type="text/javascript" src="aa.js"></script>
+
+</body>
+</html>
